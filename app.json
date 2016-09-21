@@ -1,6 +1,7 @@
 {
   "name": "cm42-central",
   "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "LANG": {
