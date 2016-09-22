@@ -1,6 +1,7 @@
 {
   "name": "cm42-central",
   "scripts": {
+    "postdeploy": "rake db:migrate"
   },
   "env": {
     "LANG": {
