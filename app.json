@@ -27,6 +27,9 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
+    },
+    "SIDEKIQ_CONCURRENCY": {
+      "value": "20"
     }
   },
   "formation": {
