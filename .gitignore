@@ -1,8 +1,7 @@
 config/database.yml
 config/cloudinary.yml
 .bundle
-db/*.sqlite3
-log/*.log
+*.log
 tmp/
 .rvmrc
 .sass-cache/
@@ -15,6 +14,6 @@ config/deploy.rb
 dump.rdb
 public/javascripts/*
 public/test_assets/
-/node_modules
-/public/webpack
+node_modules
+public/webpack
 js_coverage/
