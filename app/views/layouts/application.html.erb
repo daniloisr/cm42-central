@@ -31,7 +31,8 @@
     </div>
 
     <%= javascript_include_tag *webpack_asset_paths('application') %>
-    <%= javascript_include_tag 'i18n/translations' %>
+    <%# TODO: this line is consuming too much time when anything changes on css %>
+    <%#= javascript_include_tag 'i18n/translations' %>
     <%= javascript_include_tag :attachinary %>
     <%= yield :charts_data %>
     <%= cloudinary_js_config %>
