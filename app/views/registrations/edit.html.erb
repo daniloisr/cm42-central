@@ -7,77 +7,80 @@
     <%= form_for(
       resource, as: resource_name, url: registration_path(resource_name),
       html: { method: :put, class: 'form-horizontal' }) do |f| %>
-      <div class="col-xs-12 col-sm-6">
+
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
         <%= devise_error_messages! %>
 
         <div class="form-group">
-          <%= f.label :name, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.text_field :name, autofocus: true, class: 'form-control' %></div>
+          <%= f.label :name, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.text_field :name, autofocus: true, class: 'form-control' %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :initials, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.text_field :initials, class: 'form-control' %></div>
+          <%= f.label :initials, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.text_field :initials, class: 'form-control' %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :username, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.text_field :username, class: 'form-control' %></div>
+          <%= f.label :username, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.text_field :username, class: 'form-control' %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :email, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.email_field :email, class: 'form-control' %></div>
+          <%= f.label :email, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.email_field :email, class: 'form-control' %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :locale, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.select :locale, I18n.available_locales, { include_blank: true }, { class: 'form-control' } %></div>
+          <%= f.label :locale, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.select :locale, I18n.available_locales, { include_blank: true }, { class: 'form-control' } %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :time_zone, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.time_zone_select :time_zone, nil, { default: Time.zone }, { class: 'form-control' } %></div>
+          <%= f.label :time_zone, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.time_zone_select :time_zone, nil, { default: Time.zone }, { class: 'form-control' } %></div>
         </div>
 
         <div class="form-group">
-          <%= f.label :password, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          <%= f.label :password, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8">
+            <%= f.password_field :password, class: 'form-control' %>
             <div class="help-block"><%= t('.leave_blank_if_you_dont_want_to_change_it') %></div>
           </div>
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation, autocomplete: "off", class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10"><%= f.password_field :password_confirmation, class: 'form-control' %></div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-6">
-        <h3><%= t('.notify_me_when_my_stories_are') %></h3>
-
-        <div class="checkbox">
-          <%= f.label :email_delivery do %>
-            <%= f.check_box :email_delivery %> <%= t('story.state.delivered') %>
-          <% end %>
+          <%= f.label :password_confirmation, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8"><%= f.password_field :password_confirmation, class: 'form-control' %></div>
         </div>
 
-        <div class="checkbox">
-          <%= f.label :email_acceptance do %>
-            <%= f.check_box :email_acceptance %> <%= t('story.state.accepted') %>
-          <% end %>
-        </div>
+        <div class="form-group">
+          <%= label_tag nil, t('.notify_me_when_my_stories_are'), class: 'col-sm-4 control-label' %>
 
-        <div class="checkbox">
-          <%= f.label :email_rejection do %>
-            <%= f.check_box :email_rejection %> <%= t('story.state.rejected') %>
-          <% end %>
+          <div class="col-sm-8">
+            <div class="checkbox">
+              <%= f.label :email_delivery do %>
+                <%= f.check_box :email_delivery %> <%= t('story.state.delivered') %>
+              <% end %>
+            </div>
+
+            <div class="checkbox">
+              <%= f.label :email_acceptance do %>
+                <%= f.check_box :email_acceptance %> <%= t('story.state.accepted') %>
+              <% end %>
+            </div>
+
+            <div class="checkbox">
+              <%= f.label :email_rejection do %>
+                <%= f.check_box :email_rejection %> <%= t('story.state.rejected') %>
+              <% end %>
+            </div>
+          </div>
         </div>
 
         <div class="form-group current-password">
-          <%= f.label :current_password, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
+          <%= f.label :current_password, class: 'col-sm-4 control-label' %>
+          <div class="col-sm-8">
             <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
             <div class="help-block">
               <%= t('.we_need_your_current_password_to_confirm_your_changes') %>
@@ -86,8 +89,8 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Update", class: 'btn btn-primary' %>
-          <%= link_to t(".cancel my account"), registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-danger pull-right' %>
+          <%= link_to t(".cancel my account"), registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-danger' %>
+          <%= f.submit "Update", class: 'btn btn-primary pull-right' %>
         </div>
       </div>
     <% end %>
