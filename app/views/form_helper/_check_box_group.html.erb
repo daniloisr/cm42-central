@@ -1,0 +1,13 @@
+<div class="form-group">
+  <%= label_tag nil, label, class: 'col-xs-4 control-label' %>
+
+  <div class="col-xs-8">
+    <% boxes.each do |field, text| %>
+      <div class="checkbox">
+        <%= f.label field do %>
+          <%= f.check_box field %> <%= text %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
